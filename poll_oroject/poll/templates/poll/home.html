@@ -1,0 +1,101 @@
+<!-- home.html -->
+{% extends "poll/base.html" %} {% block title %}Home|Poll{% endblock %}
+ {% block main %}
+{% comment %} <div class="row">
+  <div class="col-10 col-lg-offset-2">
+    < class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">Available Polls</h2>
+      </div>
+      
+      
+      <ul class="list-group">
+      
+        {% for poll in polls %}
+        <li class="list-group-item py-77 home">
+          <strong> {{ poll.question }}</strong>
+          <span class="pull-right">
+            <a href="{% url 'vote' poll.id %}" class="btn btn-info ccc3"
+              >Vote</a
+            >
+            &nbsp;
+            <a href="{% url 'results' poll.id %}" class="btn btn-default ccc3"
+              >View Results</a>
+            &nbsp;
+          </span>
+        </li>
+        
+        {% endfor %}
+      </ul>
+      <br>
+      
+      
+    </div>
+  </div>
+</div> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+<div class="container ">
+   <div class="row">
+    <div class="col-1 col-lg-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <h2 class="panel-title">Available Polls</h2>
+      </div>
+      
+         <ul class="list-group">
+      
+      
+        {% for poll in polls %}
+        <li class="list-group-item py-77 home">
+         <div class="col-6">
+              <strong> {{ poll.question }}</strong>
+               <span class="pull-right"> 
+          </div>
+        <div class="row">
+        <div class="col-3">
+             <a href="{% url 'vote' poll.id %}" class="btn btn-info cc">Vote</a>&nbsp;
+        </div>
+
+        <div class="col-3">
+              <a href="{% url 'results' poll.id %}" class="btn btn-default cc">View Results</a>&nbsp;
+        </div>
+        </div>
+        </span>
+    </li>
+ {% endfor %}
+      </ul>
+
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+        
+        
+            
+        
+       
+{% endblock %}

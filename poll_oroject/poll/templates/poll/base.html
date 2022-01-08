@@ -1,0 +1,85 @@
+<!-- base.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+    </head>
+    <body>
+ 
+
+<div class="container-fluid">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a id="len1" class="hoverable " href="{% url 'home' %}">Home</a></li>
+        <li><a id="len2" class="hoverable " href="{% url 'create' %}">Create poll</a></li>
+        <li><a id="len3" class="hoverable " href="#">About</a></li>
+        <li><a id="len4" class="hoverable " href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="what-the-hell-is-this">
+    <div class="page-title col-12">
+      <h1 class='title'>Panchayat Election Polling System</h1>
+      <p class="lead">
+        
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+{% comment %} 
+
+
+         <nav class="navbar navbar-default text-light" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header text-center text-light">
+                    
+                    <a class="navbar-brand text-light" href="{% url 'home' %}">Poll Application</a>
+
+                  <a class="navbar-brand " href="{% url 'home' %}">Home</a>
+                    <a class="navbar-brand " href="{% url 'create' %}">create Poll</a>
+                </div>
+
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </nav>  {% endcomment %}
+
+        <div class="container">
+            {% block main %}{% endblock %}
+        </div>
+<script>
+$(function(){
+  var str = '#len'; //increment by 1 up to 1-nelemnts
+  $(document).ready(function(){
+    var i, stop;
+    i = 1;
+    stop = 4; //num elements
+    setInterval(function(){
+      if (i > stop){
+        return;
+      }
+      $('#len'+(i++)).toggleClass('bounce');
+    }, 500)
+  });
+});
+</script>
+    </body>
+</html>
